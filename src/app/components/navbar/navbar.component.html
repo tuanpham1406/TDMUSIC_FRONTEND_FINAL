@@ -1,0 +1,234 @@
+<nav class=" navbar navbar-expand-lg navbar-absolute navbar-transparent">
+  <div class=" container-fluid">
+    <div class=" navbar-wrapper">
+      <div class=" navbar-toggle d-inline">
+        <button class=" navbar-toggler" type="button" (click)="sidebarToggle()">
+          <span class=" navbar-toggler-bar bar1"> </span>
+          <span class=" navbar-toggler-bar bar2"> </span>
+          <span class=" navbar-toggler-bar bar3"> </span>
+        </button>
+      </div>
+      <a class=" navbar-brand" href="javascript:void(0)"> {{ getTitle() }} </a>
+    </div>
+    <button
+      aria-label="Toggle navigation"
+      class=" navbar-toggler"
+      (click)="collapse()"
+      [attr.aria-expanded]="!isCollapsed"
+      aria-controls="collapseExample"
+      id="navigation"
+      type="button"
+    >
+      <span class=" navbar-toggler-bar navbar-kebab"> </span>
+      <span class=" navbar-toggler-bar navbar-kebab"> </span>
+      <span class=" navbar-toggler-bar navbar-kebab"> </span>
+    </button>
+    <div class=" navbar-collapse" [ngbCollapse]="isCollapsed" id="navigation">
+      <ul class=" navbar-nav ml-auto">
+        <li class=" search-bar input-group">
+          <button
+            class=" btn btn-link"
+            data-target="#searchModal"
+            data-toggle="modal"
+            (click)="open(content)"
+            id="search-button"
+          >
+            <i class=" tim-icons icon-zoom-split"> </i>
+            <span class=" d-lg-none d-md-block"> Search </span>
+          </button>
+        </li>
+        <li class=" nav-item" ngbDropdown>
+          <a
+            class=" nav-link"
+            data-toggle="dropdown"
+            href="javascript:void(0)"
+            ngbDropdownToggle
+          >
+            <div class=" notification d-none d-lg-block d-xl-block"></div>
+            <i class=" tim-icons icon-sound-wave"> </i>
+            <p class=" d-lg-none">Notifications</p>
+          </a>
+          <ul class=" dropdown-menu-right dropdown-navbar" ngbDropdownMenu>
+            <li class=" nav-link">
+              <a class=" nav-item" href="javascript:void(0)" ngbDropdownItem>
+                Notifications one
+              </a>
+            </li>
+            <li class=" nav-link">
+              <a class=" nav-item" href="javascript:void(0)" ngbDropdownItem>
+                Notifications two
+              </a>
+            </li>
+            <li class=" nav-link">
+              <a class=" nav-item" href="javascript:void(0)" ngbDropdownItem>
+                Notification three
+              </a>
+            </li>
+            <li class=" nav-link">
+              <a class=" nav-item" href="javascript:void(0)" ngbDropdownItem>
+                Another notification
+              </a>
+            </li>
+            <li class=" nav-link">
+              <a class=" nav-item" href="javascript:void(0)" ngbDropdownItem>
+                Another one
+              </a>
+            </li>
+          </ul>
+        </li>
+
+
+<!--        <li class=" nav-item" ngbDropdown>-->
+<!--&lt;!&ndash;          avatar&ndash;&gt;-->
+<!--          <a-->
+<!--            class=" nav-link"-->
+<!--            data-toggle="dropdown"-->
+<!--            href="javascript:void(0)"-->
+<!--            ngbDropdownToggle-->
+<!--          >-->
+<!--            <div class=" photo">-->
+<!--              <img alt="Profile Photo" src="assets/img/anime3.png" />-->
+<!--            </div>-->
+<!--            <b class=" caret d-none d-lg-block d-xl-block"> </b>-->
+<!--            <p class=" d-lg-none">Log out</p>-->
+<!--          </a>-->
+<!--          <ul class=" dropdown-navbar" ngbDropdownMenu>-->
+<!--            <li class=" nav-link">-->
+<!--              <a class=" nav-item" href="javascript:void(0)" ngbDropdownItem>-->
+<!--                Profile-->
+<!--              </a>-->
+<!--            </li>-->
+<!--            <li class=" nav-link">-->
+<!--              <a class=" nav-item" href="javascript:void(0)" ngbDropdownItem>-->
+<!--                Settings-->
+<!--              </a>-->
+<!--            </li>-->
+<!--            <li class=" dropdown-divider"></li>-->
+<!--            <li class=" nav-link">-->
+<!--              <a class=" nav-item" href="javascript:void(0)" ngbDropdownItem>-->
+<!--                Log out-->
+<!--              </a>-->
+<!--            </li>-->
+<!--          </ul>-->
+<!--        </li>-->
+<!--        <li class=" separator d-lg-none"></li>-->
+
+
+<!--        Login-->
+        <button type="button" class="btn btn-primary login" data-toggle="modal" data-target=".bd-example-modal-lg">Login</button>
+
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <h1>Login</h1>
+              <div class="form-group row">
+                <label class="col">
+                  Email
+                  <input type="email" class="form-control" formControlName="email">
+                </label>
+              </div>
+<!--              <div class="alert alert-danger" role="alert" *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">-->
+<!--                Invalid email!-->
+<!--              </div>-->
+              <div class="form-group row">
+                <label class="col">
+                  Password
+                  <input type="password" class="form-control" formControlName="password">
+                </label>
+              </div>
+
+<!--              <div class="alert alert-danger" role="alert" *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">-->
+<!--                Invalid password!-->
+<!--              </div>-->
+              <div class="form-group">
+                <button class="btn btn-info" type="submit">Đăng nhập</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<!--        Register-->
+        <button type="button" class="btn btn-primary register" data-toggle="modal" data-target=".bd-example-modal-sm">Register</button>
+
+        <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+
+              <div class="form-group row">
+                <label class="col">
+                  FirstName
+                  <input type="firstName" class="form-control" formControlName="firstName">
+                </label>
+                <label class="col">
+                  LastName
+                  <input type="firstName" class="form-control" formControlName="firstName">
+                </label>
+              </div>
+              <div class="form-group row">
+                <label class="col">
+                  UserName
+                  <input type="user" class="form-control" formControlName="userName">
+                </label>
+              </div>
+              <div class="form-group row">
+                <label class="col">
+                  Email
+                  <input type="email" class="form-control" formControlName="email">
+                </label>
+              </div>
+<!--              <div class="alert alert-danger" role="alert" *ngIf="registerForm.get('email').invalid && registerForm.get('email').touched">-->
+<!--                Invalid email!-->
+<!--              </div>-->
+              <fieldset formGroupName="pwGroup">
+                <div class="form-group row">
+                  <label class="col">
+                    Password
+                    <input type="password" class="form-control" formControlName="password">
+                  </label>
+                </div>
+                <div class="form-group row">
+                  <label class="col">
+                    Confirm Password
+                    <input type="password" class="form-control" formControlName="confirmPassword">
+                  </label>
+                </div>
+              </fieldset>
+<!--              <div class="alert alert-danger" role="alert" *ngIf="registerForm.hasError('passwordnotmatch', ['pwGroup']) &&-->
+<!--      registerForm.get('pwGroup').touched">-->
+<!--                Password does not match!-->
+<!--              </div>-->
+              <div class="form-group">
+                <button class="btn btn-info" type="submit">Đăng kí</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<ng-template #content let-modal>
+  <div class=" modal-header">
+    <input
+      class=" form-control"
+      id="inlineFormInputGroup"
+      placeholder="nhập tên bài hát, ca sĩ, playlist cần tìm kiếm   . . . . . "
+      type="text"
+    />
+
+    <button
+      aria-label="Close"
+      class=" close"
+      data-dismiss="modal"
+      type="button"
+      (click)="modal.dismiss('Cross click')"
+    >
+      <i class=" tim-icons icon-simple-remove"> </i>
+    </button>
+  </div>
+
+</ng-template>
