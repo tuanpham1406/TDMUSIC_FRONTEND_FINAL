@@ -120,29 +120,7 @@
         <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-lg">
             <div class="modal-content">
-              <h1>Login</h1>
-              <div class="form-group row">
-                <label class="col">
-                  Email
-                  <input type="email" class="form-control" formControlName="email">
-                </label>
-              </div>
-<!--              <div class="alert alert-danger" role="alert" *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">-->
-<!--                Invalid email!-->
-<!--              </div>-->
-              <div class="form-group row">
-                <label class="col">
-                  Password
-                  <input type="password" class="form-control" formControlName="password">
-                </label>
-              </div>
-
-<!--              <div class="alert alert-danger" role="alert" *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">-->
-<!--                Invalid password!-->
-<!--              </div>-->
-              <div class="form-group">
-                <button class="btn btn-info" type="submit">Đăng nhập</button>
-              </div>
+              <app-login></app-login>
             </div>
           </div>
         </div>
@@ -153,54 +131,7 @@
         <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-sm">
             <div class="modal-content">
-
-              <div class="form-group row">
-                <label class="col">
-                  FirstName
-                  <input type="firstName" class="form-control" formControlName="firstName">
-                </label>
-                <label class="col">
-                  LastName
-                  <input type="firstName" class="form-control" formControlName="firstName">
-                </label>
-              </div>
-              <div class="form-group row">
-                <label class="col">
-                  UserName
-                  <input type="user" class="form-control" formControlName="userName">
-                </label>
-              </div>
-              <div class="form-group row">
-                <label class="col">
-                  Email
-                  <input type="email" class="form-control" formControlName="email">
-                </label>
-              </div>
-<!--              <div class="alert alert-danger" role="alert" *ngIf="registerForm.get('email').invalid && registerForm.get('email').touched">-->
-<!--                Invalid email!-->
-<!--              </div>-->
-              <fieldset formGroupName="pwGroup">
-                <div class="form-group row">
-                  <label class="col">
-                    Password
-                    <input type="password" class="form-control" formControlName="password">
-                  </label>
-                </div>
-                <div class="form-group row">
-                  <label class="col">
-                    Confirm Password
-                    <input type="password" class="form-control" formControlName="confirmPassword">
-                  </label>
-                </div>
-              </fieldset>
-<!--              <div class="alert alert-danger" role="alert" *ngIf="registerForm.hasError('passwordnotmatch', ['pwGroup']) &&-->
-<!--      registerForm.get('pwGroup').touched">-->
-<!--                Password does not match!-->
-<!--              </div>-->
-              <div class="form-group">
-                <button class="btn btn-info" type="submit">Đăng kí</button>
-              </div>
-
+              <app-register></app-register>
             </div>
           </div>
         </div>
